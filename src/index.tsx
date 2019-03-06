@@ -85,7 +85,7 @@ export const reducer = (state: IReducerState, action: any) => {
       break;
     }
     case 'reset': {
-      return Object.assign(state, getInitialState(action.initialState));
+      return Object.assign({}, state, getInitialState(action.initialState));
     }
     default: {
       throw new Error(`Unknown action type: ${action.type}`);
