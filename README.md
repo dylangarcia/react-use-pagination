@@ -28,9 +28,9 @@ const App = () => {
       <pre>
         { JSON.stringify(pagination, null, 2 )}
       </pre>
-      <button onClick={pagination.onNextPage}>Next<button>
-      <button onClick={pagination.onPreviousPage}>Back<button>
-      <button onClick={pagination.onResetPage}>Reset<button>
+      <button onClick={pagination.onNextPage}>Next</button>
+      <button onClick={pagination.onPreviousPage}>Back</button>
+      <button onClick={pagination.onResetPage}>Reset</button>
     </div>
   )
 }
