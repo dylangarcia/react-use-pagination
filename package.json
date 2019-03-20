@@ -1,6 +1,6 @@
 {
   "name": "use-pagination",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React hook for data pagination",
   "author": "dylangarcia",
   "license": "MIT",
@@ -21,7 +21,16 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
-  "keywords": ["react", "hook", "hooks", "data", "pagination", "paginate", "use pagination", "use paginate"],
+  "keywords": [
+    "react",
+    "hook",
+    "hooks",
+    "data",
+    "pagination",
+    "paginate",
+    "use pagination",
+    "use paginate"
+  ],
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.8.0-alpha.1"
