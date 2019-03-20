@@ -29,7 +29,7 @@ export const getInitialState = (props: IPaginationProps) => {
   const currentPage = clamp(initialPage, 1, maxPages);
   const currentItems = getCurrentItems(items, currentPage, itemsPerPage);
   const [previousPage, nextPage] = getBoundingPages(currentPage, maxPages);
-  const hasNextPage = nextPage !== maxPages;
+  const hasNextPage = nextPage <= maxPages && currentPage !== maxPages;
   const hasPreviousPage = previousPage >= 1 && currentPage !== 1;
 
   return {
