@@ -84,6 +84,11 @@ export const reducer = (state: IReducerState, action: any) => {
       currentPage = clamp(action.currentPage, 1, maxPages);
       break;
     }
+    case 'update': {
+      return Object.assign({}, state, {
+        items: action.items,
+      });
+    }
     case 'reset': {
       return Object.assign({}, state, getInitialState(action.initialState));
     }
@@ -123,13 +128,17 @@ const usePagination = (props: IPaginationProps) => {
 
   const onResetPage = React.useCallback(
     () => dispatch({ type: 'reset', initialState: props }),
-    []
+    [props]
   );
 
   const setCurrentPage = React.useCallback(
     (currentPage) => dispatch({ type: 'set', currentPage }),
     []
   );
+
+  React.useEffect(() => {
+    dispatch({ type: 'update', items: props.items });
+  }, [props.items]);
 
   return {
     onNextPage,
